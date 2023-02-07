@@ -1,38 +1,295 @@
-.App {
-  text-align: center;
+@import "./assets/css/fonts/stylesheet.css";
+@import "./assets/icon/style.css";
+
+* {
+  box-sizing: border-box;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+body {
+  background-color: #f3f5f5;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+/* ------------------- HEADER ------------------- */
+/* ------------------- HEADER ------------------- */
+/* ------------------- HEADER ------------------- */
+
+header {
+  width: 100%;
+  background-color: white;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+header .top-bar {
+  height: 60px;
+  border-bottom: 1px solid #e9ebeb;
+}
+
+header .top-bar .container {
+  margin: 0 auto;
+  max-width: 1200px;
+  height: 100%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+header .logo-container img {
+  height: 41px;
+}
+
+/* ------------------- ABOUT PART ------------------- */
+/* ------------------- ABOUT PART ------------------- */
+/* ------------------- ABOUT PART ------------------- */
+
+.about-restaurant .container {
+  width: 1200px;
+  height: 100%;
+  margin: 0 auto;
+  padding: 30px 0;
+
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+}
+
+.about-restaurant-text {
+  margin-right: 30px;
+}
+.about-restaurant h1 {
+  font-size: 32px;
+  line-height: 26.7px;
+  color: #2e3333;
+  font-weight: bold;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+
+  margin-top: 19px;
+  margin-bottom: 39px;
+}
+
+.about-restaurant p {
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  font-size: 19px;
+  line-height: 28.8px;
+  color: #868a8a;
+}
+
+.about-restaurant .image-container img {
+  width: 350px;
+  height: 200px;
+  border-radius: 5px;
+  overflow: hidden;
+  background: #f3f5f5;
+}
+
+/* ------------------- CONTENT ------------------- */
+/* ------------------- CONTENT ------------------- */
+/* ------------------- CONTENT ------------------- */
+
+.content .container {
+  margin: 0 auto;
+  max-width: 1200px;
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+}
+
+.content .container .menu {
+  flex: 1 1;
+  margin-right: 30px;
+  margin-bottom: -25px;
+}
+
+/* ------------------- CART ------------------- */
+/* ------------------- CART ------------------- */
+/* ------------------- CART ------------------- */
+
+.content .container .cart-column {
+  width: 350px;
+  background-color: white;
+  border-radius: 4px;
   display: flex;
   flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+  margin: 30px 0;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.validate-button {
+  width: calc(100% - 20px);
+  margin: 10px;
+  border-radius: 5px;
+  padding: 16px;
+  border: none;
+  font-weight: bold;
+  font-size: 16;
+}
+
+.validate-button {
+  cursor: pointer;
+  background-color: #00cdbd;
   color: white;
 }
-
-.App-link {
-  color: #61dafb;
+.forbidden {
+  cursor: not-allowed;
+  background-color: #b4c3c3;
+  color: #8b9a9b;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.empty-cart {
+  color: #868a8a;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 48px 0;
+}
+
+.cart-list,
+.cart-subtotal {
+  margin: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  /* align-items: stretch; */
+}
+
+.cart-content {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin: 16px 0;
+}
+
+.cart-price {
+  width: 85px;
+  text-align: end;
+}
+
+.cart-meal-name {
+  flex: 1 1;
+}
+
+.icon-plus,
+.icon-minus {
+  color: #00cdbd;
+  cursor: pointer;
+  padding: 0 3px;
+}
+
+.cart-counter {
+  display: flex;
+  align-items: center;
+  margin-right: 10px;
+  color: #808484;
+}
+.cart-total {
+  margin: 20px 10px;
+  display: flex;
+  justify-content: space-between;
+  font-size: 20px;
+  font-weight: bold;
+}
+.cart-list,
+.cart-subtotal {
+  border-bottom: 1px solid #d1d7d7;
+}
+
+.cart-subtotal-line {
+  display: flex;
+  justify-content: space-between;
+  padding: 8px 0;
+}
+/* ------------------- MENU ITEMS ------------------- */
+/* ------------------- MENU ITEMS ------------------- */
+/* ------------------- MENU ITEMS ------------------- */
+
+.category h2 {
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  color: #2e3333;
+  font-weight: bold;
+  font-size: 24px;
+  line-height: 20px;
+  margin: 25px 0;
+}
+
+.item {
+  border-radius: 5px;
+  height: 160px;
+  background: #fff;
+  padding: 15px;
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  cursor: pointer;
+  transition-duration: 0.3s;
+}
+
+.item-container {
+  width: 50%;
+  min-width: 300px;
+  padding: 0 10px 25px;
+}
+
+.menu-items {
+  display: flex;
+  flex-direction: row;
+  align-items: stretch;
+  flex-wrap: wrap;
+  margin: 0 -10px;
+}
+
+.menu-item-text {
+  flex: 1 1;
+  margin-right: 15px;
+}
+
+.menu-item-text h3 {
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  font-size: 18px;
+  line-height: 20px;
+  color: #2e3333;
+  margin-bottom: 5px;
+}
+
+.menu-item-text p {
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  font-size: 15px;
+  color: #808484;
+  line-height: 20px;
+  height: 41px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  margin: 0 0 16px;
+}
+
+.menu-item-img {
+  height: 130px;
+  width: 130px;
+  border-radius: 5px;
+  overflow: hidden;
+  position: relative;
+}
+
+.menu-item-img img {
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+}
+
+.price {
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  color: #808484;
+  font-size: 17px;
+  line-height: 14.7px;
+}
+
+.icon-STAR_FILL {
+  margin-left: 10px;
+  color: #ff8000;
+  font-size: 20px;
+}
+.popular {
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  color: #ff8000;
+  font-weight: bold;
+  font-size: 15px;
+  line-height: 10.7px;
+  margin-left: 10px;
 }
