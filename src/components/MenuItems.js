@@ -6,32 +6,37 @@ const MenuItems = ({ meals, isLoading, cart, setCart }) => {
           <div
             key={index}
             className="item-container"
-            onClick={() => {
-              const newCart = [...cart];
-              const indexNewMeal = newCart.findIndex((elt) => {
-                return elt.id === meal.id;
-              });
-
-              if (indexNewMeal !== -1) {
-                newCart[indexNewMeal].quantity += 1;
-              } else {
-                newCart.push(meal);
-                newCart[newCart.length - 1].quantity = 1;
+            onClick={
+              // Add item to cart
+              () => {
+                const newCart = [...cart];
+                const indexNewMeal = newCart.findIndex((elt) => {
+                  return elt.id === meal.id;
+                });
+                // If already exist, add 1 quantity else add to State Array
+                if (indexNewMeal !== -1) {
+                  newCart[indexNewMeal].quantity += 1;
+                } else {
+                  newCart.push(meal);
+                  newCart[newCart.length - 1].quantity = 1;
+                }
+                setCart(newCart);
               }
-              setCart(newCart);
-            }}
+            }
           >
             <div className="item">
               <div className="menu-item-text">
                 <h3>{meal.title}</h3>
                 <p>{meal.description}</p>
-                <span className="price">{`${meal.price} €`}</span>
-                {meal.popular === true && (
-                  <>
-                    <span className="icon-STAR_FILL" />
-                    <span className="popular">Populaire</span>
-                  </>
-                )}
+                <div className="menu-item-detail">
+                  <span className="price">{`${meal.price} €`}</span>
+                  {meal.popular === true && (
+                    <div className="popular-container">
+                      <span className="icon-STAR_FILL" />
+                      <span className="popular">Populaire</span>
+                    </div>
+                  )}
+                </div>
               </div>
 
               {meal.picture && (
